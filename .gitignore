@@ -20,8 +20,8 @@ tmp/
 *.py[cod]
 
 # Eclipse Project Files
-.cproject
-.project
+#.cproject
+#.project
 .pydevproject
 
 # uVision generated files
