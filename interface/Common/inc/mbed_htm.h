@@ -26,15 +26,10 @@
 #endif
 
 const unsigned char WebSide[] = {
-"<!-- mbed Microcontroller Website and Authentication Shortcut -->\r\n"
-"<!-- Version: " FW_BUILD " Build: " __DATE__ " " __TIME__ " Git Commit SHA: "  GIT_COMMIT_SHA " Git local mods:" GIT_LOCAL_MODS_STR"-->\r\n"
-"<html>\r\n"
-"<head>\r\n"
-"<meta http-equiv=\"refresh\" content=\"0; url=http://mbed.org/device/?code=@A\"/>\r\n"
-"<title>mbed Website Shortcut</title>\r\n"
-"</head>\r\n"
-"<body></body>\r\n"
-"</html>\r\n"
-"\r\n"};
+//"<!-- mbed Microcontroller Website and Authentication Shortcut -->\r\n"
+//"<!-- Version: " FW_BUILD " Build: " __DATE__ " " __TIME__ " Git Commit SHA: "  GIT_COMMIT_SHA " Git local mods:" GIT_LOCAL_MODS_STR"-->\r\n"
+"<html><head><meta http-equiv=\"refresh\" content=\"0; url=http://mbed.org/device/?code=@A\"/>"
+//"<title>mbed Website Shortcut</title>\r\n"
+"</head><body>Steeven :)</body></html>"};
 
 #endif
