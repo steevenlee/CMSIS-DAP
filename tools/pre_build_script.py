@@ -49,27 +49,27 @@ VERSION_GIT_FILE_TEMPLATE = """
 GIT_VERSION_FILE_PATH = "../../Common/inc/version_git.h"
 
 def pre_build():
-    print "#> Pre-build script start"
+    print ("#> Pre-build script start")
 
     # First thing to do is delete any existing generated files.
     try:
         os.remove(GIT_VERSION_FILE_PATH)
-        print "#> Old git version file removed"
+        print ("#> Old git version file removed")
     except OSError:
-        print "#> No git version file to remove"
+        print ("#> No git version file to remove")
         pass
 
     # Get the git SHA.
-    print "#> Getting git SHA"
+    print ("#> Getting git SHA")
     try:
         git_sha = check_output("git rev-parse --verify HEAD", shell=True)
         git_sha = git_sha.strip()
     except:
-        print "#> ERROR: Failed to get git SHA, do you have git.exe in your PATH environment variable?"
+        print ("#> ERROR: Failed to get git SHA, do you have git.exe in your PATH environment variable?")
         return 1
 
     # Check are there any local, uncommitted modifications.
-    print "#> Checking for local changes"
+    print ("#> Checking for local changes")
     try:
         check_output("git diff --no-ext-diff --quiet --exit-code")
     except CalledProcessError as e:
@@ -79,12 +79,12 @@ def pre_build():
 
 
     #Create the version file.
-    print "#> Creating new git version file"
+    print ("#> Creating new git version file")
     version_file = open(GIT_VERSION_FILE_PATH, 'a')
     version_file.write(VERSION_GIT_FILE_TEMPLATE % (git_sha, git_has_changes))
     version_file.close()
 
-    print "#> Pre-build script completed"
+    print ("#> Pre-build script completed")
 
     return 0
 
